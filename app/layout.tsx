@@ -1,6 +1,6 @@
 import { HamburgerMenuIcon } from '@radix-ui/react-icons';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Athiti } from 'next/font/google';
 
 import { Sheet, SheetContent, SheetHeader, SheetTrigger } from '@/components/ui/sheet';
 import { TopBarNav } from '@/components/ui/topbar-nav';
@@ -8,7 +8,7 @@ import { UserNav } from '@/components/ui/user-nav';
 import './globals.css';
 import SidebarNav from '@/components/ui/sidebar-nav';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Athiti({ weight: ['500', '600', '700'], subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Create Next App',
