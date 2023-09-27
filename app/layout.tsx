@@ -1,9 +1,12 @@
-import { SidebarNav } from '@/components/ui/topbar-nav';
-import { UserNav } from '@/components/ui/user-nav';
+import { HamburgerMenuIcon } from '@radix-ui/react-icons';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+
+import { Sheet, SheetContent, SheetHeader, SheetTrigger } from '@/components/ui/sheet';
+import { TopBarNav } from '@/components/ui/topbar-nav';
+import { UserNav } from '@/components/ui/user-nav';
 import './globals.css';
-import { HamburgerMenuIcon } from '@radix-ui/react-icons';
+import SidebarNav from '@/components/ui/sidebar-nav';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -14,24 +17,24 @@ export const metadata: Metadata = {
 
 const sidebarNavItems = [
   {
-    title: 'Profile',
-    href: '/',
+    title: 'User',
+    href: '/users',
   },
   {
-    title: 'Account',
-    href: '/test1',
+    title: 'Role',
+    href: '/roles',
   },
   {
-    title: 'Appearance',
-    href: '/test2',
+    title: 'Organization',
+    href: '/organization',
   },
   {
-    title: 'Notifications',
-    href: '/test3',
+    title: 'Invoice',
+    href: '/invoices',
   },
   {
-    title: 'Display',
-    href: '/examples/forms/display',
+    title: 'Project',
+    href: '/projects',
   },
 ];
 
@@ -39,9 +42,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang='en'>
       <body className={inter.className}>
-        <div className='flex items-center justify-between max-w-screen-xl px-2 pt-3 mx-auto mb-3'>
-          <SidebarNav items={sidebarNavItems} className='hidden md:flex' />
-          <HamburgerMenuIcon className='flex md:hidden' />
+        <div className='flex items-center justify-between max-w-screen-xl px-2 mx-auto my-3'>
+          <div>
+            <TopBarNav items={sidebarNavItems} className='hidden md:flex' />
+            <Sheet>
+              <SheetTrigger>
+                <HamburgerMenuIcon className='flex md:hidden' />
+              </SheetTrigger>
+              <SheetContent className='w-[300px]' side='left'>
+                <SidebarNav items={sidebarNavItems} />
+              </SheetContent>
+            </Sheet>
+          </div>
+          <h1 className='text-2xl text-center md:-mt-4'>Skill</h1>
+
           <UserNav />
         </div>
         {children}
