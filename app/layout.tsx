@@ -42,7 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang='en'>
       <body className={inter.className}>
-        <div className='flex items-center justify-between max-w-screen-xl px-2 mx-auto my-3'>
+        <div className='flex items-center justify-between mx-6 my-6 max-w-screen'>
           <div>
             <TopBarNav items={sidebarNavItems} className='hidden md:flex' />
             <Sheet>
