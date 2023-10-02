@@ -1,9 +1,5 @@
-import PageWrapper from '@/components/ui/page-wrapper';
+const GuestHome = () => {
+  return <div>page</div>;
+};
 
-export default function Home() {
-  return (
-    <PageWrapper>
-      <h1 className='text-2xl font-bold'>Hello</h1>
-    </PageWrapper>
-  );
-}
+export default GuestHome;
