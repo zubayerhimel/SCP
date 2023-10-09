@@ -15,10 +15,10 @@ const UserCard = () => {
           <AvatarFallback>SC</AvatarFallback>
         </Avatar>
         <div className='flex flex-col'>
-          <h1 className='text-xl font-medium'>Mohammd Ayen Uddin Ahemmed</h1>
-          <span className='text-lg text-gray-500'>ayen.uddin@gmail.com</span>
-          <span className='text-lg text-gray-500'>Admin</span>
-          <span className='text-lg text-gray-500'>0193878737377</span>
+          <h1 className='text-base font-medium'>Mohammd Ayen Uddin Ahemmed</h1>
+          <span className='text-xs text-gray-500'>ayen.uddin@gmail.com</span>
+          <span className='text-xs text-gray-500'>Admin</span>
+          <span className='text-xs text-gray-500'>0193878737377</span>
         </div>
       </div>
     </Card>
