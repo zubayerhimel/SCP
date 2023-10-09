@@ -13,8 +13,8 @@ const ProjectCard = () => {
               <AvatarFallback>SC</AvatarFallback>
             </Avatar>
             <div>
-              <h1 className='text-xl text-purple-600'>Layla Amora</h1>
-              <span>Web Developer</span>
+              <h1 className='text-sm text-purple-600'>Layla Amora</h1>
+              <span className='text-[10px]'>Web Developer</span>
             </div>
           </div>
           <div>
