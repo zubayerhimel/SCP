@@ -1,20 +1,15 @@
-import { Button } from '@/components/ui/button';
 import PageWrapper from '@/components/ui/page-wrapper';
-import ProjectCard from '@/components/ui/project-card';
+import UserCard from '@/components/ui/user-card';
 
 const Users = () => {
   return (
     <PageWrapper>
-      <div className='flex justify-end mb-6 ml-auto'>
-        <Button>Create New Project</Button>
-      </div>
-      <div className='flex flex-wrap items-center justify-start gap-8'>
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
+      <div className='grid grid-cols-1 gap-9 md:grid-cols-2 lg:grid-cols-3'>
+        <UserCard />
+        <UserCard />
+        <UserCard />
+        <UserCard />
+        <UserCard />
       </div>
     </PageWrapper>
   );

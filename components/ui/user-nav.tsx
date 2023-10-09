@@ -6,8 +6,8 @@ export function UserNav() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant='ghost' className='relative w-8 h-8 rounded-full md:-mt-4'>
-          <Avatar className='h-9 w-9'>
+        <Button variant='ghost' className='relative w-12 h-12 rounded-full'>
+          <Avatar className='w-12 h-12'>
             <AvatarImage src='/avatars/03.png' alt='@shadcn' />
             <AvatarFallback>SC</AvatarFallback>
           </Avatar>
