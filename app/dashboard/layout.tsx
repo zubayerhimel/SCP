@@ -1,11 +1,10 @@
-import { HamburgerMenuIcon } from '@radix-ui/react-icons';
 import type { Metadata } from 'next';
+import { AlignLeft, BellRing } from 'lucide-react';
 
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import SidebarNav from '@/components/ui/sidebar-nav';
 import { TopBarNav } from '@/components/ui/topbar-nav';
 import { UserNav } from '@/components/ui/user-nav';
-import { BellRing } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -42,8 +41,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         <div className='flex item-center'>
           <TopBarNav items={sidebarNavItems} className='hidden md:block' />
           <Sheet>
-            <SheetTrigger>
-              <HamburgerMenuIcon className='block md:hidden' />
+            <SheetTrigger asChild>
+              <AlignLeft className='block md:hidden' />
             </SheetTrigger>
             <SheetContent className='w-[300px]' side='left'>
               <SidebarNav items={sidebarNavItems} />
