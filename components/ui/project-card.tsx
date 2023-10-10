@@ -6,7 +6,7 @@ import { Card } from './card';
 const ProjectCard = () => {
   return (
     <Card className='p-6 ring-1 ring-purple-200'>
-      <Badge className='mb-2' variant='secondary' type='error'>
+      <Badge className='mb-2' variant='secondary' type='warning'>
         Pending
       </Badge>
       <div className='flex justify-between'>
