@@ -1,11 +1,14 @@
-import React from 'react';
-import { Card, CardContent } from './card';
 import { Avatar, AvatarFallback } from './avatar';
+import { Badge } from './badge';
 import { Button } from './button';
+import { Card } from './card';
 
 const ProjectCard = () => {
   return (
     <Card className='p-6 ring-1 ring-purple-200'>
+      <Badge className='mb-2' variant='secondary' type='error'>
+        Pending
+      </Badge>
       <div className='flex justify-between'>
         <div className='flex flex-col justify-between'>
           <div className='flex pr-6 space-x-3'>
@@ -18,23 +21,21 @@ const ProjectCard = () => {
             </div>
           </div>
           <div>
-            <Button className='text-purple-600 ring-1 ring-purple-600 hover:bg-purple-50 hover:text-purple-600' variant='outline'>
-              Contact
-            </Button>
+            <Button variant='outline'>Contact</Button>
           </div>
         </div>
 
         <div className='pl-6 border-l-2 border-l-gray-300'>
-          <h1 className='text-xl font-semibold'>Project name</h1>
-          <span>description</span>
+          <h1 className='text-base font-semibold'>Project name</h1>
+          <span className='text-base'>description</span>
           <div className='flex mt-2 space-x-8'>
-            <div className='flex flex-col items-center justify-center'>
-              <h1>3</h1>
-              <h1>batch</h1>
+            <div className='flex flex-col items-center justify-center text-base'>
+              <span>3</span>
+              <span>batch</span>
             </div>
             <div className='flex flex-col items-center justify-center'>
-              <h1>3</h1>
-              <h1>batch</h1>
+              <span>3</span>
+              <span>batch</span>
             </div>
           </div>
           <Button variant='secondary' className='mt-2 font-semibold bg-primary/10 text-primary hover:bg-primary/10'>
