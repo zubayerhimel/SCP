@@ -6,12 +6,20 @@ import Link from 'next/link';
 import { Button } from './button';
 import ProjectDetailsInfo from './project-details-info';
 import { Separator } from './separator';
+import { Badge } from './badge';
 
 const BatchAccordion = () => {
   return (
     <Accordion type='single' collapsible>
       <AccordionItem value='item-1'>
-        <AccordionTrigger>Is it accessible?</AccordionTrigger>
+        <AccordionTrigger>
+          <div className='flex gap-3 justify-center items-center'>
+            <span className='text-base'>Sep0423BrandnameBatchnameProjectnameclientcode</span>
+            <Badge variant='secondary' type='primary'>
+              Ongoing
+            </Badge>
+          </div>
+        </AccordionTrigger>
         <AccordionContent>
           <ProjectDetailsInfo />
 
