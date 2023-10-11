@@ -1,7 +1,7 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import Image from 'next/image';
 
-import Demo from '@/app/assets/images/demo_img1.jpeg';
+import Demo from '@/assets/images/demo_img1.jpeg';
 import Link from 'next/link';
 import { Button } from './button';
 import ProjectDetailsInfo from './project-details-info';
@@ -13,7 +13,7 @@ const BatchAccordion = () => {
     <Accordion type='single' collapsible>
       <AccordionItem value='item-1'>
         <AccordionTrigger>
-          <div className='flex gap-3 justify-center items-center'>
+          <div className='flex items-center justify-center gap-3'>
             <span className='text-base'>Sep0423BrandnameBatchnameProjectnameclientcode</span>
             <Badge variant='secondary' type='primary'>
               Ongoing

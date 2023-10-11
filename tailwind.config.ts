@@ -1,9 +1,15 @@
 import type { Config } from 'tailwindcss';
 
-const config: Config = {
+export default {
   content: ['./pages/**/*.{js,ts,jsx,tsx,mdx}', './components/**/*.{js,ts,jsx,tsx,mdx}', './app/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
+      colors: {
+        dark: '#001412',
+        light: '#F9FAFB',
+        primary: '#770099',
+        secondary: '#EF7E19',
+      },
       keyframes: {
         'accordion-down': {
           from: { height: '0' },
@@ -22,15 +28,7 @@ const config: Config = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
-      colors: {
-        dark: '#001412',
-        light: '#F9FAFB',
-        primary: '#709',
-        primaryLight: 'rgba(119, 0, 153, 0.12)',
-        secondary: '#EF7E19',
-      },
     },
   },
   plugins: [],
-};
-export default config;
+} satisfies Config;
