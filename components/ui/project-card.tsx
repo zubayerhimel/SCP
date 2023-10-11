@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Avatar, AvatarFallback } from './avatar';
 import { Badge } from './badge';
 import { Button } from './button';
@@ -38,9 +39,11 @@ const ProjectCard = () => {
               <span>batch</span>
             </div>
           </div>
-          <Button variant='secondary' className='mt-2 font-semibold bg-primary/10 text-primary hover:bg-primary/10'>
-            View Details
-          </Button>
+          <Link href='/dashboard/projects/project-name'>
+            <Button variant='secondary' className='mt-2 font-semibold bg-primary/10 text-primary hover:bg-primary/10'>
+              View Details
+            </Button>
+          </Link>
         </div>
       </div>
     </Card>
