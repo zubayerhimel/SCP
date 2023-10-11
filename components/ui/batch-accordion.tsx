@@ -17,19 +17,19 @@ const BatchAccordion = () => {
 
           <Separator className='my-4' />
 
-          <div className='grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6'>
-            <Image className='w-[302px] h-[202px] object-contain' alt='product' src={Demo} />
-            <Image className='w-[302px] h-[202px] object-contain' alt='product' src={Demo} />
-            <Image className='w-[302px] h-[202px] object-contain' alt='product' src={Demo} />
-            <Image className='w-[302px] h-[202px] object-contain' alt='product' src={Demo} />
-            <Image className='w-[302px] h-[202px] object-contain' alt='product' src={Demo} />
-            <Image className='w-[302px] h-[202px] object-contain' alt='product' src={Demo} />
-            <Image className='w-[302px] h-[202px] object-contain' alt='product' src={Demo} />
-            <Image className='w-[302px] h-[202px] object-contain' alt='product' src={Demo} />
-            <Image className='w-[302px] h-[202px] object-contain' alt='product' src={Demo} />
-            <Image className='w-[302px] h-[202px] object-contain' alt='product' src={Demo} />
-            <Image className='w-[302px] h-[202px] object-contain' alt='product' src={Demo} />
-            <Image className='w-[302px] h-[202px] object-contain' alt='product' src={Demo} />
+          <div className='flex flex-wrap items-center justify-start gap-8'>
+            <Image className='w-[302px] h-[202px] object-cover' alt='product' src={Demo} />
+            <Image className='w-[302px] h-[202px] object-cover' alt='product' src={Demo} />
+            <Image className='w-[302px] h-[202px] object-cover' alt='product' src={Demo} />
+            <Image className='w-[302px] h-[202px] object-cover' alt='product' src={Demo} />
+            <Image className='w-[302px] h-[202px] object-cover' alt='product' src={Demo} />
+            <Image className='w-[302px] h-[202px] object-cover' alt='product' src={Demo} />
+            <Image className='w-[302px] h-[202px] object-cover' alt='product' src={Demo} />
+            <Image className='w-[302px] h-[202px] object-cover' alt='product' src={Demo} />
+            <Image className='w-[302px] h-[202px] object-cover' alt='product' src={Demo} />
+            <Image className='w-[302px] h-[202px] object-cover' alt='product' src={Demo} />
+            <Image className='w-[302px] h-[202px] object-cover' alt='product' src={Demo} />
+            <Image className='w-[302px] h-[202px] object-cover' alt='product' src={Demo} />
           </div>
           <div className='flex justify-center mt-12'>
             <Link href='/dashboard/projects/project-name/batch'>
