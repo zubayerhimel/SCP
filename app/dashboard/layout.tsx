@@ -15,22 +15,27 @@ const sidebarNavItems = [
   {
     title: 'User',
     href: '/dashboard/users',
+    key: 'users',
   },
   {
     title: 'Role',
     href: '/dashboard/roles',
+    key: 'roles',
   },
   {
     title: 'Organization',
     href: '/dashboard/organization',
+    key: 'organization',
   },
   {
     title: 'Invoice',
     href: '/dashboard/invoices',
+    key: 'invoices',
   },
   {
     title: 'Project',
     href: '/dashboard/projects',
+    key: 'projects',
   },
 ];
 

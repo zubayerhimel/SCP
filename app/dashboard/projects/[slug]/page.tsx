@@ -6,7 +6,7 @@ const ProjectDetails = ({ params }: { params: { slug: string } }) => {
   return (
     <PageWrapper>
       <div className='flex justify-end mb-6 ml-auto'>
-        <Button>Create New Project</Button>
+        <Button>Create New Batch</Button>
       </div>
       <div className='grid grid-cols-1'>
         <BatchAccordion />

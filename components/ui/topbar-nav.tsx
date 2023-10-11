@@ -10,6 +10,7 @@ interface TopBarNavProps extends React.HTMLAttributes<HTMLElement> {
   items: {
     href: string;
     title: string;
+    key: string;
   }[];
 }
 
@@ -22,7 +23,11 @@ export function TopBarNav({ className, items, ...props }: TopBarNavProps) {
         <Link
           key={item.href}
           href={item.href}
-          className={cn(buttonVariants({ variant: 'nav' }), pathname === item.href ? 'bg-slate-100 hover:bg-muted font-semibold' : 'hover:bg-transparent hover:underline', 'justify-start')}>
+          className={cn(
+            buttonVariants({ variant: 'nav' }),
+            pathname.split('/')[2] === item.key ? 'bg-slate-100 hover:bg-muted font-semibold' : 'hover:bg-transparent hover:underline',
+            'justify-start'
+          )}>
           {item.title}
         </Link>
       ))}

@@ -7,9 +7,6 @@ import { Card } from './card';
 const ProjectCard = () => {
   return (
     <Card className='p-6 ring-1 ring-purple-200'>
-      <Badge className='mb-2' variant='secondary' type='warning'>
-        Pending
-      </Badge>
       <div className='flex justify-between'>
         <div className='flex flex-col justify-between'>
           <div className='flex pr-6 space-x-3'>
@@ -28,7 +25,9 @@ const ProjectCard = () => {
 
         <div className='pl-6 border-l-2 border-l-gray-300'>
           <h1 className='text-base font-semibold'>Project name</h1>
-          <span className='text-base'>description</span>
+          <Badge className='mb-2' variant='secondary' type='info'>
+            Pending
+          </Badge>
           <div className='flex mt-2 space-x-8'>
             <div className='flex flex-col items-center justify-center text-base'>
               <span>3</span>
