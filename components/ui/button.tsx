@@ -11,8 +11,8 @@ const buttonVariants = cva(
       variant: {
         default: 'bg-primary text-primary-foreground shadow hover:bg-primary/90',
         destructive: 'bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90',
-        outline: 'border border-primary bg-primaryLight shadow-sm hover:bg-primary/10 text-primary',
-        secondary: 'bg-primaryLight text-primary shadow-sm hover:bg-primary/80',
+        outline: 'border border-primary shadow-sm font-semibold hover:bg-primary/10 text-primary',
+        secondary: 'bg-primary/10 text-primary font-semibold shadow-sm hover:bg-primary/20',
         ghost: 'hover:bg-primary/10 text-primary',
         link: 'text-gray-950 underline-offset-4 hover:underline',
         nav: 'hover:bg-primary/10 text-gray-950',
