@@ -1,5 +1,5 @@
 import PageWrapper from '@/components/ui/page-wrapper';
-import ProjectCreateForm from '@/components/ui/project-create-form';
+import ProjectCreateForm from '@/components/forms/project-create-form';
 
 const NewProject = () => {
   return (

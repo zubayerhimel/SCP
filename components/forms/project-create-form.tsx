@@ -5,9 +5,11 @@ import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import FormProvider from '../hook-form/FormProvider';
 import RHFInputField from '../hook-form/RHFInputField';
-import { Button } from './button';
+import { Button } from '../ui/button';
 import RHFSelectField from '../hook-form/RHFSelectField';
-import { SelectItem } from './select';
+import { SelectItem } from '../ui/select';
+import RHFDatePicker from '../hook-form/RHFDatePicker';
+import RHFCheckbox from '../hook-form/RHFCheckbox.1';
 
 const ProjectCreateForm = () => {
   const formSchema = z.object({
@@ -33,11 +35,15 @@ const ProjectCreateForm = () => {
 
   return (
     <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
-      <RHFInputField name='email' label='Email' />
-      <RHFSelectField name='country' label='Country'>
-        <SelectItem value='Bangladesh'>Bangladesh</SelectItem>
-        <SelectItem value='India'>India</SelectItem>
-      </RHFSelectField>
+      <div className=''>
+        <RHFInputField name='email' label='Email' />
+        <RHFSelectField name='country' label='Country'>
+          <SelectItem value='Bangladesh'>Bangladesh</SelectItem>
+          <SelectItem value='India'>India</SelectItem>
+        </RHFSelectField>
+        <RHFDatePicker name='date' label='Date' />
+        <RHFCheckbox name='check' label='Checkbox' />
+      </div>
       <Button className='mt-6' type='submit'>
         Submit
       </Button>
