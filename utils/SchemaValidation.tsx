@@ -31,3 +31,14 @@ export const ProjectCreateSchema = z
     message: 'Delivery data must not be earlier than the start date',
     path: ['delivery_date'],
   });
+
+export const RoleCreateSchema = z.object({
+  role_name: z.string().min(3, { message: 'Please provide a valid name for role' }).trim(),
+  description: z.string().min(4, { message: 'Give a proper description' }).optional(),
+  resource_list: z.string().refine((value) => value !== '', {
+    message: 'Please select at least one resource',
+  }),
+  role_type: z.string().refine((value) => value !== '', {
+    message: 'Please select role type.',
+  }),
+});

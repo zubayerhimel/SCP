@@ -18,7 +18,7 @@ export function TopBarNav({ className, items, ...props }: TopBarNavProps) {
   const pathname = usePathname();
 
   return (
-    <nav className={cn('flex space-x-2 p-1.5 border-2 rounded-md md:block', className)} {...props}>
+    <nav className={cn('flex space-x-2 p-1.5 ring-1 ring-zinc-300 rounded-md md:block', className)} {...props}>
       {items.map((item) => (
         <Link
           key={item.href}

@@ -1,12 +1,13 @@
-import ProjectCreateForm from '@/app/dashboard/projects/_component/project-create-form';
+import Link from 'next/link';
+
 import { buttonVariants } from '@/components/ui/button';
 import PageWrapper from '@/components/ui/page-wrapper';
 import { Separator } from '@/components/ui/separator';
 import { cn } from '@/lib/utils';
 import { ChevronLeft } from 'lucide-react';
-import Link from 'next/link';
+import RoleCreateFrom from '../_component/role-create-form';
 
-const NewProject = () => {
+const CreateRole = () => {
   return (
     <PageWrapper>
       <div className='container max-w-2xl'>
@@ -14,13 +15,13 @@ const NewProject = () => {
           <ChevronLeft /> Back
         </Link>
         <div className='flex flex-col items-center justify-center max-w-xs mx-auto mb-10 space-y-2'>
-          <span className='font-semibold'>Project Basic Information</span>
+          <span className='font-semibold'>Role Information</span>
           <Separator />
         </div>
-        <ProjectCreateForm />
+        <RoleCreateFrom />
       </div>
     </PageWrapper>
   );
 };
 
-export default NewProject;
+export default CreateRole;
