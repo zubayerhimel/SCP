@@ -8,9 +8,10 @@ type RHFInputFieldProps = {
   name: string;
   label?: string;
   children: ReactNode;
+  required?: boolean;
 };
 
-const RHFRadiogroup = ({ name, label, children }: RHFInputFieldProps) => {
+const RHFRadiogroup = ({ name, label, children, required }: RHFInputFieldProps) => {
   const { control } = useFormContext();
 
   return (
@@ -19,7 +20,10 @@ const RHFRadiogroup = ({ name, label, children }: RHFInputFieldProps) => {
       name={name}
       render={({ field }) => (
         <FormItem className='flex flex-col'>
-          <FormLabel>{label}</FormLabel>
+          <FormLabel>
+            {label}
+            {required && <span className='text-red-500'>*</span>}
+          </FormLabel>
           <FormControl>
             <RadioGroup onValueChange={field.onChange} defaultValue={field.value} className='flex flex-col space-y-1'>
               {children}

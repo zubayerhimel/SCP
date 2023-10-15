@@ -6,9 +6,10 @@ import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '../ui/
 type RHFInputFieldProps = {
   name: string;
   label?: string;
+  required?: boolean;
 };
 
-const RHFCheckbox = ({ name, label }: RHFInputFieldProps) => {
+const RHFCheckbox = ({ name, label, required }: RHFInputFieldProps) => {
   const { control } = useFormContext();
 
   return (
@@ -17,7 +18,9 @@ const RHFCheckbox = ({ name, label }: RHFInputFieldProps) => {
       name={name}
       render={({ field }) => (
         <FormItem className='flex flex-col'>
-          <FormLabel>{label}</FormLabel>
+          <FormLabel>
+            {label} {required && <span className='text-red-500'>*</span>}
+          </FormLabel>
           <FormControl>
             <Checkbox checked={field.value} onCheckedChange={field.onChange} />
           </FormControl>

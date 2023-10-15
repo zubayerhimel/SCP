@@ -11,9 +11,10 @@ import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
 type RHFInputFieldProps = {
   name: string;
   label?: string;
+  required?: boolean;
 };
 
-const RHFDatePicker = ({ name, label }: RHFInputFieldProps) => {
+const RHFDatePicker = ({ name, label, required }: RHFInputFieldProps) => {
   const { control } = useFormContext();
 
   return (
@@ -22,12 +23,15 @@ const RHFDatePicker = ({ name, label }: RHFInputFieldProps) => {
       name={name}
       render={({ field }) => (
         <FormItem className='flex flex-col'>
-          <FormLabel>{label}</FormLabel>
+          <FormLabel>
+            {label}
+            {required && <span className='text-red-500'>*</span>}
+          </FormLabel>
           <Popover>
             <PopoverTrigger asChild>
               <FormControl>
                 <Button variant={'outline'} className={cn('w-full pl-3 text-left font-normal', !field.value && 'text-muted-foreground')}>
-                  {field.value ? format(field.value, 'PPP') : <span>Pick a date</span>}
+                  {field.value ? format(field.value, 'PPP') : ''}
                   <CalendarDays className='w-5 h-5 ml-auto' />
                 </Button>
               </FormControl>

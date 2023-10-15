@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Demo from '@/assets/images/demo_img1.jpeg';
 import Link from 'next/link';
 import { Button } from './button';
-import ProjectDetailsInfo from './project-details-info';
+import ProjectDetailsInfo from '../../app/dashboard/projects/_component/project-details-info';
 import { Separator } from './separator';
 import { Badge } from './badge';
 

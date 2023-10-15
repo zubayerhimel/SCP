@@ -1,7 +1,7 @@
 import { Pencil, Trash } from 'lucide-react';
 
-import { Avatar, AvatarFallback } from './avatar';
-import { Card } from './card';
+import { Avatar, AvatarFallback } from '../../../../components/ui/avatar';
+import { Card } from '../../../../components/ui/card';
 
 const UserCard = () => {
   return (

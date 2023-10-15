@@ -8,9 +8,10 @@ type RHFInputFieldProps = {
   label?: string;
   placeholder?: string;
   children: ReactNode;
+  required?: boolean;
 };
 
-const RHFSelectField = ({ name, label, placeholder, children }: RHFInputFieldProps) => {
+const RHFSelectField = ({ name, label, placeholder, children, required }: RHFInputFieldProps) => {
   const { control } = useFormContext();
 
   return (
@@ -19,7 +20,10 @@ const RHFSelectField = ({ name, label, placeholder, children }: RHFInputFieldPro
       name={name}
       render={({ field }) => (
         <FormItem>
-          <FormLabel>{label}</FormLabel>
+          <FormLabel>
+            {label}
+            {required && <span className='text-red-500'>*</span>}
+          </FormLabel>
           <FormControl>
             <Select onValueChange={field.onChange} defaultValue={field.value}>
               <SelectTrigger className='w-full'>

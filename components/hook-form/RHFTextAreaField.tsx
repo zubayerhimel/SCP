@@ -6,9 +6,10 @@ type RHFInputFieldProps = {
   name: string;
   label?: string;
   placeholder?: string;
+  required?: boolean;
 };
 
-const RHFAreaField = ({ name, label, placeholder }: RHFInputFieldProps) => {
+const RHFTextAreaField = ({ name, label, placeholder, required }: RHFInputFieldProps) => {
   const { control } = useFormContext();
 
   return (
@@ -17,9 +18,12 @@ const RHFAreaField = ({ name, label, placeholder }: RHFInputFieldProps) => {
       name={name}
       render={({ field }) => (
         <FormItem>
-          <FormLabel>{label}</FormLabel>
+          <FormLabel>
+            {label}
+            {required && <span className='text-red-500'>*</span>}
+          </FormLabel>
           <FormControl>
-            <Textarea placeholder={placeholder} className='resize-none' {...field} />
+            <Textarea placeholder={placeholder} {...field} />
           </FormControl>
           <FormMessage />
         </FormItem>
@@ -28,4 +32,4 @@ const RHFAreaField = ({ name, label, placeholder }: RHFInputFieldProps) => {
   );
 };
 
-export default RHFAreaField;
+export default RHFTextAreaField;

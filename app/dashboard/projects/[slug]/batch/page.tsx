@@ -5,14 +5,14 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 import PageWrapper from '@/components/ui/page-wrapper';
-import ProjectDetailsInfo from '@/components/ui/project-details-info';
+import ProjectDetailsInfo from '@/app/dashboard/projects/_component/project-details-info';
 import Image from 'next/image';
 
 const ProjectBatch = () => {
   return (
     <PageWrapper>
       <div className='flex justify-end mb-6 ml-auto'>
-        <Button variant='secondary'>Create New Sub Batch</Button>
+        <Button>Create New Sub Batch</Button>
       </div>
       <Card className='shadow-none'>
         <CardHeader>
@@ -30,7 +30,7 @@ const ProjectBatch = () => {
         <div className='flex flex-wrap items-center justify-start gap-8'>
           <AddImageButton />
           <div className='relative rounded-lg bg-primary/10'>
-            <Checkbox value='card' id='card' className='absolute w-5 h-5 mt-6 ml-6 peer' />
+            <Checkbox value='card' id='card' className='absolute w-5 h-5 mt-4 ml-4 peer' />
             <Label
               htmlFor='card'
               className='flex items-center border-4 border-transparent justify-between rounded-lg peer-data-[state=checked]:border-4 [&:has([data-state=checked])]:border-4 hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary'>

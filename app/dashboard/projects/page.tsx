@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { buttonVariants } from '@/components/ui/button';
 import PageWrapper from '@/components/ui/page-wrapper';
-import ProjectCard from '@/components/ui/project-card';
+import ProjectCard from '@/app/dashboard/projects/_component/project-card';
 
 const Projects = () => {
   return (

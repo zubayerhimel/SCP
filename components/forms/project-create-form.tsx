@@ -4,48 +4,49 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import FormProvider from '../hook-form/FormProvider';
-import RHFInputField from '../hook-form/RHFInputField';
-import { Button } from '../ui/button';
-import RHFSelectField from '../hook-form/RHFSelectField';
-import { SelectItem } from '../ui/select';
 import RHFDatePicker from '../hook-form/RHFDatePicker';
-import RHFCheckbox from '../hook-form/RHFCheckbox.1';
+import RHFInputField from '../hook-form/RHFInputField';
+import RHFTextAreaField from '../hook-form/RHFTextAreaField';
+import { Button } from '../ui/button';
+import { ProjectCreateSchema } from '@/utils/SchemaValidation';
 
 const ProjectCreateForm = () => {
-  const formSchema = z.object({
-    email: z.string().min(2, {
-      message: 'Email must be at least 2 characters.',
-    }),
-    country: z.string().refine((value) => value !== '', { message: 'Please select country' }),
-  });
+  type TProjectCreateSchema = z.infer<typeof ProjectCreateSchema>;
 
-  const methods = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const methods = useForm<TProjectCreateSchema>({
+    resolver: zodResolver(ProjectCreateSchema),
     defaultValues: {
       email: '',
-      country: '',
+      description: '',
+      start_date: null,
+      delivery_date: null,
+      name: '',
+      client_code: '',
+      total_file: '',
+      project_cost: '',
     },
   });
 
   const { handleSubmit } = methods;
 
-  const onSubmit = () => {
-    console.log('form submitted');
+  const onSubmit = (data: TProjectCreateSchema) => {
+    console.log('form submitted', data);
   };
 
   return (
     <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
-      <div className=''>
-        <RHFInputField name='email' label='Email' />
-        <RHFSelectField name='country' label='Country'>
-          <SelectItem value='Bangladesh'>Bangladesh</SelectItem>
-          <SelectItem value='India'>India</SelectItem>
-        </RHFSelectField>
-        <RHFDatePicker name='date' label='Date' />
-        <RHFCheckbox name='check' label='Checkbox' />
+      <div className='space-y-6'>
+        <RHFInputField name='email' label='Email' required />
+        <RHFTextAreaField name='description' label='Project Description' />
+        <RHFDatePicker name='start_date' label='Start Date' />
+        <RHFDatePicker name='delivery_date' label='Delivery Date' />
+        <RHFInputField name='name' label='Client Name' />
+        <RHFInputField name='client_code' label='Client Code' />
+        <RHFInputField name='total_file' label='Total File' />
+        <RHFInputField name='project_cost' label='Cost of the Project' />
       </div>
       <Button className='mt-6' type='submit'>
-        Submit
+        Create New Project
       </Button>
     </FormProvider>
   );

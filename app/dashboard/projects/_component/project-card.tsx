@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import { Avatar, AvatarFallback } from './avatar';
-import { Badge } from './badge';
-import { Button } from './button';
-import { Card } from './card';
+import { Avatar, AvatarFallback } from '../../../../components/ui/avatar';
+import { Badge } from '../../../../components/ui/badge';
+import { Button } from '../../../../components/ui/button';
+import { Card } from '../../../../components/ui/card';
 
 const ProjectCard = () => {
   return (

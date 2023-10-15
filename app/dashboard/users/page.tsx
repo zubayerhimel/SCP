@@ -1,5 +1,5 @@
 import PageWrapper from '@/components/ui/page-wrapper';
-import UserCard from '@/components/ui/user-card';
+import UserCard from '@/app/dashboard/users/_component/user-card';
 
 const Users = () => {
   return (
