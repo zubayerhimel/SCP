@@ -1,4 +1,4 @@
-import BatchAccordion from '@/components/ui/batch-accordion';
+import BatchAccordion from '@/app/dashboard/projects/_component/batch-accordion';
 import { Button } from '@/components/ui/button';
 import PageWrapper from '@/components/ui/page-wrapper';
 
