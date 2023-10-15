@@ -12,7 +12,7 @@ const RoleCard = () => {
             <Label className='text-2xl' htmlFor='role'>
               Admin
             </Label>
-            <div className='flex gap-2'>
+            <div className='flex items-center gap-2'>
               <Switch id='role' />
               <Pencil className='w-4 h-4 cursor-pointer' />
               <Trash className='w-4 h-4 cursor-pointer' />
@@ -20,7 +20,7 @@ const RoleCard = () => {
           </div>
         </CardTitle>
         <CardDescription>Organization</CardDescription>
-        <CardDescription>This is a role for Admin of this organisation</CardDescription>
+        <CardDescription>This is a role for Admin of this organization</CardDescription>
       </CardHeader>
     </Card>
   );
