@@ -3,6 +3,7 @@ import { Athiti } from 'next/font/google';
 
 import './globals.css';
 import { Suspense } from 'react';
+import LoadingIndicator from '@/components/ui/loading-indicator';
 
 const inter = Athiti({ weight: ['500', '600', '700'], subsets: ['latin'] });
 
@@ -15,7 +16,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   return (
     <html lang='en'>
       <body className={inter.className}>
-        <Suspense>{children}</Suspense>
+        <Suspense fallback={<LoadingIndicator />}>{children}</Suspense>
       </body>
     </html>
   );

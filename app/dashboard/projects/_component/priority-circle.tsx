@@ -22,7 +22,11 @@ const PriorityCircle = ({ type }: PriorityCircleProps) => {
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
-          <div className={`w-4 h-4 ${typeWiseColor[type]} rounded-full`} />
+          <span className='relative flex w-3 h-3'>
+            <span className={`absolute inline-flex w-full h-full rounded-full opacity-75 animate-ping  ${typeWiseColor[type]}`}></span>
+            <span className={`relative inline-flex w-3 h-3 rounded-full  ${typeWiseColor[type]}`}></span>
+          </span>
+          {/* <div className={`animate-ping w-4 h-4 ${typeWiseColor[type]} rounded-full`} /> */}
         </TooltipTrigger>
         <TooltipContent className='bg-black'>
           <p>{toTitleCase(type)}</p>

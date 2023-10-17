@@ -5,6 +5,8 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import SidebarNav from '@/components/ui/sidebar-nav';
 import { TopBarNav } from '@/components/ui/topbar-nav';
 import { UserNav } from '@/components/ui/user-nav';
+import { Suspense } from 'react';
+import LoadingIndicator from '@/components/ui/loading-indicator';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -60,7 +62,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           <UserNav />
         </div>
       </div>
-      {children}
+      <Suspense fallback={<LoadingIndicator />}>{children}</Suspense>
     </>
   );
 }
