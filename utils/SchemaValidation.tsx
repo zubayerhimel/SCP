@@ -7,7 +7,7 @@ export const ProjectCreateSchema = z
     start_date: z.nullable(z.date()),
     delivery_date: z.nullable(z.date()),
     name: z.string().trim().min(3, { message: 'Please provide valid name' }),
-    client_code: z.string().trim(),
+    client_code: z.string().min(1),
     total_file: z.string().refine(
       (value) => {
         const parsedValue = parseFloat(value);

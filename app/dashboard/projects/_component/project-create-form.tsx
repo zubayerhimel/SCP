@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import FormProvider from '../../../../components/hook-form/FormProvider';
 import RHFDatePicker from '../../../../components/hook-form/RHFDatePicker';
-import RHFInputField from '../../../../components/hook-form/RHFInputField';
+import RHFInputField from '@/components/hook-form/RHFInputField';
 import RHFTextAreaField from '../../../../components/hook-form/RHFTextAreaField';
 import { Button } from '../../../../components/ui/button';
 import { ProjectCreateSchema } from '@/utils/SchemaValidation';

@@ -4,7 +4,7 @@ import UserCard from '@/app/dashboard/users/_component/user-card';
 const Users = () => {
   return (
     <PageWrapper>
-      <div className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4'>
+      <div className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
         <UserCard title='Mohammad Ayen Uddin Ahemmed' />
         <UserCard title='Ikhtiar Udding Mohammad Bokhtiar Kholji' />
         <UserCard title='Ayen Udding Mohammad ' />

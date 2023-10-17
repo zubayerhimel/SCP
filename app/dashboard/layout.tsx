@@ -57,7 +57,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           </Sheet>
         </div>
         <h1 className='text-2xl font-bold text-center'>Skill</h1>
-        <div className='flex items-center gap-3'>
+        <div className='flex items-center gap-6'>
           <BellRing className='w-5 h-5' />
           <UserNav />
         </div>
