@@ -1,7 +1,7 @@
 'use client';
 
 import FormProvider from '@/components/hook-form/FormProvider';
-import RHFInputField from '@/components/hook-form/RHFInputField.1';
+import RHFInputField from '@/components/hook-form/RHFInputField';
 import RHFSelectField from '@/components/hook-form/RHFSelectField';
 import RHFTextAreaField from '@/components/hook-form/RHFTextAreaField';
 import { Button } from '@/components/ui/button';
@@ -9,7 +9,6 @@ import { SelectItem } from '@/components/ui/select';
 import { Role_Types } from '@/utils/Constant';
 import { RoleCreateSchema } from '@/utils/SchemaValidation';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 

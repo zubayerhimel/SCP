@@ -3,6 +3,7 @@ import RoleCard from './_component/role-card';
 import Link from 'next/link';
 import { buttonVariants } from '@/components/ui/button';
 import UploadMultiFile from '@/components/upload/UploadMultiFile';
+import MultiFilePreview from '@/components/upload/MultiFilePreview';
 
 const Roles = () => {
   return (
@@ -21,8 +22,6 @@ const Roles = () => {
         <RoleCard />
         <RoleCard />
       </div>
-
-      {/* <UploadMultiFile files={[]} error={false} helperText={'lk'} /> */}
     </PageWrapper>
   );
 };
