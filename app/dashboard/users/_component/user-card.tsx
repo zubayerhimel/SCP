@@ -20,9 +20,9 @@ const UserCard = ({ title }: { title: string }) => {
               <span className='text-xs text-gray-500'>Admin</span>
               <span className='text-xs text-gray-500'>0193878737377</span>
             </div>
-            <div className='flex gap-3'>
-              <Pencil className='w-4 h-4 text-purple-600' />
-              <Trash className='w-4 h-4 text-purple-600' />
+            <div className='flex gap-2'>
+              <Pencil className='w-4 h-4 text-purple-600 cursor-pointer' />
+              <Trash className='w-4 h-4 text-purple-600 cursor-pointer' />
             </div>
           </div>
         </div>

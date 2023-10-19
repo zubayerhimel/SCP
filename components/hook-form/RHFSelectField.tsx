@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '../ui/form';
 import { Select, SelectContent, SelectGroup, SelectTrigger, SelectValue } from '../ui/select';
+import { ScrollArea } from '../ui/scroll-area';
 
 type RHFInputFieldProps = {
   name: string;
@@ -30,7 +31,9 @@ const RHFSelectField = ({ name, label, placeholder, children, required }: RHFInp
                 <SelectValue placeholder={placeholder} />
               </SelectTrigger>
               <SelectContent>
-                <SelectGroup>{children}</SelectGroup>
+                <ScrollArea className='w-auto h-72'>
+                  <SelectGroup>{children}</SelectGroup>
+                </ScrollArea>
               </SelectContent>
             </Select>
           </FormControl>
