@@ -11,7 +11,7 @@ const Projects = () => {
           Create New Project
         </Link>
       </div>
-      <div className='flex flex-wrap items-center justify-start gap-8'>
+      <div className='grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3'>
         <ProjectCard />
         <ProjectCard />
         <ProjectCard />
