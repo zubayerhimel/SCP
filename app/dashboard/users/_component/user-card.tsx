@@ -2,6 +2,7 @@ import { Pencil, Trash } from 'lucide-react';
 
 import { Avatar, AvatarFallback } from '../../../../components/ui/avatar';
 import { Card } from '../../../../components/ui/card';
+import Link from 'next/link';
 
 const UserCard = ({ title }: { title: string }) => {
   return (
@@ -21,7 +22,9 @@ const UserCard = ({ title }: { title: string }) => {
               <span className='text-xs text-gray-500'>0193878737377</span>
             </div>
             <div className='flex gap-2'>
-              <Pencil className='w-4 h-4 text-purple-600 cursor-pointer' />
+              <Link href='/dashboard/users/lkdf'>
+                <Pencil className='w-4 h-4 text-purple-600 cursor-pointer' />
+              </Link>
               <Trash className='w-4 h-4 text-purple-600 cursor-pointer' />
             </div>
           </div>

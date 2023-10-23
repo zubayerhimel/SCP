@@ -11,6 +11,7 @@ interface SidebarNavProps extends React.HTMLAttributes<HTMLElement> {
   items: {
     href: string;
     title: string;
+    key: string;
   }[];
 }
 
@@ -23,7 +24,7 @@ const SidebarNav = ({ items }: SidebarNavProps) => {
         <Link
           key={item.href}
           href={item.href}
-          className={cn(buttonVariants({ variant: 'nav' }), pathname === item.href ? 'bg-muted hover:bg-muted font-semibold' : 'hover:bg-transparent hover:underline', 'justify-start')}>
+          className={cn(buttonVariants({ variant: 'nav' }), pathname.split('/')[2] === item.key ? 'bg-muted hover:bg-muted font-semibold' : 'hover:bg-transparent hover:underline', 'justify-start')}>
           {item.title}
         </Link>
       ))}
