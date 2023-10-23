@@ -1,8 +1,8 @@
 'use client';
 
-import * as React from 'react';
-import { CaretSortIcon, CheckIcon } from '@radix-ui/react-icons';
+import { CaretDownIcon, CheckIcon } from '@radix-ui/react-icons';
 import * as SelectPrimitive from '@radix-ui/react-select';
+import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
@@ -22,7 +22,7 @@ const SelectTrigger = React.forwardRef<React.ElementRef<typeof SelectPrimitive.T
     {...props}>
     {children}
     <SelectPrimitive.Icon asChild>
-      <CaretSortIcon className='w-4 h-4 opacity-50' />
+      <CaretDownIcon className='w-4 h-4 opacity-50' />
     </SelectPrimitive.Icon>
   </SelectPrimitive.Trigger>
 ));
@@ -77,4 +77,4 @@ const SelectSeparator = React.forwardRef<React.ElementRef<typeof SelectPrimitive
 ));
 SelectSeparator.displayName = SelectPrimitive.Separator.displayName;
 
-export { Select, SelectGroup, SelectValue, SelectTrigger, SelectContent, SelectLabel, SelectItem, SelectSeparator };
+export { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectSeparator, SelectTrigger, SelectValue };

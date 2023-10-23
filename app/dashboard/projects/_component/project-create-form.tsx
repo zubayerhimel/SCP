@@ -1,16 +1,14 @@
 'use client';
 
+import RHFInputField from '@/components/hook-form/RHFInputField';
+import { ProjectCreateSchema } from '@/utils/SchemaValidation';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import FormProvider from '../../../../components/hook-form/FormProvider';
 import RHFDatePicker from '../../../../components/hook-form/RHFDatePicker';
-import RHFInputField from '@/components/hook-form/RHFInputField';
 import RHFTextAreaField from '../../../../components/hook-form/RHFTextAreaField';
 import { Button } from '../../../../components/ui/button';
-import { ProjectCreateSchema } from '@/utils/SchemaValidation';
-import RHFAvatar from '@/components/hook-form/RHFAvater';
-import { useCallback } from 'react';
 
 const ProjectCreateForm = () => {
   type TProjectCreateSchema = z.infer<typeof ProjectCreateSchema>;
@@ -30,7 +28,7 @@ const ProjectCreateForm = () => {
     },
   });
 
-  const { handleSubmit, setValue } = methods;
+  const { handleSubmit } = methods;
 
   const onSubmit = (data: TProjectCreateSchema) => {
     console.log('form submitted', data);

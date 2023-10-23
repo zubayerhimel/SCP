@@ -31,7 +31,7 @@ const RHFSelectField = ({ name, label, placeholder, children, required }: RHFInp
                 <SelectValue placeholder={placeholder} />
               </SelectTrigger>
               <SelectContent>
-                <ScrollArea className='w-auto h-72'>
+                <ScrollArea className='w-auto max-h-72'>
                   <SelectGroup>{children}</SelectGroup>
                 </ScrollArea>
               </SelectContent>

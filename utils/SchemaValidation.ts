@@ -1,4 +1,6 @@
 import * as z from 'zod';
+import { PhoneNumberValidation } from './Regex';
+import { isUserAdult } from './Helper';
 
 export const ProjectCreateSchema = z
   .object({
@@ -76,4 +78,17 @@ export const ClientCreateSchema = z.object({
   account_type: z.string().optional(),
   beneficiary: z.string().min(3),
   beneficiary_address: z.string().optional(),
+});
+
+export const UserCreateSchema = z.object({
+  name: z.string().min(3),
+  personal_number: z.string().regex(PhoneNumberValidation, 'Invalid Phone number').optional(),
+  official_number: z.string().regex(PhoneNumberValidation, 'Invalid Phone number'),
+  email: z.string().email(),
+  present_address: z.string().min(6).max(30),
+  permanent_address: z.string().min(6).max(30),
+  dob: z.nullable(z.date().refine((dob) => isUserAdult(dob), { message: 'User must be at least 18 years old' })),
+  gender: z.string().refine((value) => value !== '', { message: 'Please select gender' }),
+  blood_group: z.string().refine((value) => value !== '', { message: 'Please select blood group' }),
+  religion: z.string().refine((value) => value !== '', { message: 'Please select religion' }),
 });
