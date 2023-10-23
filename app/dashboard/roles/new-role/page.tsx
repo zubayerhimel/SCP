@@ -1,3 +1,4 @@
+'use client';
 import Link from 'next/link';
 
 import { buttonVariants } from '@/components/ui/button';
@@ -6,8 +7,12 @@ import { Separator } from '@/components/ui/separator';
 import { cn } from '@/lib/utils';
 import { ChevronLeft } from 'lucide-react';
 import RoleCreateFrom from '../_component/role-create-form';
+import UploadAvatar from '@/components/upload/UploadAvatar';
 
 const CreateRole = () => {
+  const onUpload = (value: File[]) => {
+    console.log('hello', value);
+  };
   return (
     <PageWrapper>
       <div className='container max-w-2xl'>
@@ -20,6 +25,8 @@ const CreateRole = () => {
         </div>
         <RoleCreateFrom />
       </div>
+
+      <UploadAvatar onDrop={onUpload} />
     </PageWrapper>
   );
 };

@@ -2,6 +2,7 @@ import * as z from 'zod';
 
 export const ProjectCreateSchema = z
   .object({
+    avatarUrl: z.string(),
     email: z.string().email({ message: 'Invalid email address' }).trim().toLowerCase(),
     description: z.string().trim().min(2, { message: 'Please give a proper description' }),
     start_date: z.nullable(z.date()),

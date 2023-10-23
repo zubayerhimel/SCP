@@ -9,6 +9,8 @@ import RHFInputField from '@/components/hook-form/RHFInputField';
 import RHFTextAreaField from '../../../../components/hook-form/RHFTextAreaField';
 import { Button } from '../../../../components/ui/button';
 import { ProjectCreateSchema } from '@/utils/SchemaValidation';
+import RHFAvatar from '@/components/hook-form/RHFAvater';
+import { useCallback } from 'react';
 
 const ProjectCreateForm = () => {
   type TProjectCreateSchema = z.infer<typeof ProjectCreateSchema>;
@@ -16,6 +18,7 @@ const ProjectCreateForm = () => {
   const methods = useForm<TProjectCreateSchema>({
     resolver: zodResolver(ProjectCreateSchema),
     defaultValues: {
+      avatarUrl: '',
       email: '',
       description: '',
       start_date: null,
@@ -27,7 +30,7 @@ const ProjectCreateForm = () => {
     },
   });
 
-  const { handleSubmit } = methods;
+  const { handleSubmit, setValue } = methods;
 
   const onSubmit = (data: TProjectCreateSchema) => {
     console.log('form submitted', data);
