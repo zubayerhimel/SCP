@@ -8,6 +8,7 @@ type RHFInputFieldProps = {
   placeholder?: string;
   required?: boolean;
   type?: string;
+  disabled?: boolean;
 };
 
 const RHFInputField = ({ name, label, placeholder, type, required, ...others }: RHFInputFieldProps) => {
@@ -24,7 +25,7 @@ const RHFInputField = ({ name, label, placeholder, type, required, ...others }: 
             {required && <span className='text-red-500'>*</span>}
           </FormLabel>
           <FormControl>
-            <Input type={type} placeholder={placeholder} {...field} {...others} />
+            <Input {...field} {...others} />
           </FormControl>
           <FormMessage />
         </FormItem>
