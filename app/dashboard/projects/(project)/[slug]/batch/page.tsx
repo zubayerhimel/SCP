@@ -45,22 +45,24 @@ const ProjectBatch = () => {
   const [batchImages, setBatchImages] = useState(IMAGES);
   const [selectedItems, setSelectedItems] = useState(0);
 
+  const updateSelectedItems = (images: ImageProps[]) => images.filter((el) => el.checked === true).length;
+
   const onImageCheck = (value: ImageProps) => {
     const updatedBatchImages = batchImages.map((image) => (image.id === value.id ? { ...image, checked: !image.checked } : image));
     setBatchImages(updatedBatchImages);
-    setSelectedItems(updatedBatchImages.filter((el) => el.checked === true).length);
+    setSelectedItems(updateSelectedItems(updatedBatchImages));
   };
 
   const onSelectAll = () => {
     const updatedBatchImages = batchImages.map((image) => ({ ...image, checked: true }));
     setBatchImages(updatedBatchImages);
-    setSelectedItems(updatedBatchImages.filter((el) => el.checked === true).length);
+    setSelectedItems(updateSelectedItems(updatedBatchImages));
   };
 
   const onUnselectAll = () => {
     const updatedBatchImages = batchImages.map((image) => ({ ...image, checked: false }));
     setBatchImages(updatedBatchImages);
-    setSelectedItems(updatedBatchImages.filter((el) => el.checked === true).length);
+    setSelectedItems(updateSelectedItems(updatedBatchImages));
   };
 
   return (
