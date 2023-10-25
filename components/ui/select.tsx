@@ -3,6 +3,7 @@
 import { CaretDownIcon, CheckIcon } from '@radix-ui/react-icons';
 import * as SelectPrimitive from '@radix-ui/react-select';
 import * as React from 'react';
+import { ScrollArea } from './scroll-area';
 
 import { cn } from '@/lib/utils';
 
@@ -41,7 +42,7 @@ const SelectContent = React.forwardRef<React.ElementRef<typeof SelectPrimitive.C
         position={position}
         {...props}>
         <SelectPrimitive.Viewport className={cn('p-1', position === 'popper' && 'h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]')}>
-          {children}
+          <ScrollArea className='w-auto overflow-auto max-h-72'>{children}</ScrollArea>
         </SelectPrimitive.Viewport>
       </SelectPrimitive.Content>
     </SelectPrimitive.Portal>

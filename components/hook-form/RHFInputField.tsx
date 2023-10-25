@@ -25,7 +25,7 @@ const RHFInputField = ({ name, label, placeholder, type, required, ...others }: 
             {required && <span className='text-red-500'>*</span>}
           </FormLabel>
           <FormControl>
-            <Input {...field} {...others} />
+            <Input type={type} {...field} {...others} />
           </FormControl>
           <FormMessage />
         </FormItem>

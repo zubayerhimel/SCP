@@ -10,9 +10,9 @@ import RHFDatePicker from '../../../../components/hook-form/RHFDatePicker';
 import RHFTextAreaField from '../../../../components/hook-form/RHFTextAreaField';
 import { Button } from '../../../../components/ui/button';
 
-const ProjectCreateForm = () => {
-  type TProjectCreateSchema = z.infer<typeof ProjectCreateSchema>;
+type TProjectCreateSchema = z.infer<typeof ProjectCreateSchema>;
 
+const ProjectCreateForm = () => {
   const methods = useForm<TProjectCreateSchema>({
     resolver: zodResolver(ProjectCreateSchema),
     defaultValues: {

@@ -31,7 +31,7 @@ export const ProjectCreateSchema = z
     ),
   })
   .refine((data) => data.start_date === null || data.delivery_date === null || data.start_date <= data.delivery_date, {
-    message: 'Delivery data must not be earlier than the start date',
+    message: 'Delivery date must not be earlier than the start date',
     path: ['delivery_date'],
   });
 
@@ -92,3 +92,41 @@ export const UserCreateSchema = z.object({
   blood_group: z.string().refine((value) => value !== '', { message: 'Please select blood group' }),
   religion: z.string().refine((value) => value !== '', { message: 'Please select religion' }),
 });
+
+export const BatchCreateSchema = z
+  .object({
+    name: z.string().min(3),
+    description: z.string().min(5),
+    incoming_date: z.nullable(z.date()),
+    batch_delivery: z.nullable(z.date()),
+    delivery_time: z.string().min(4),
+    price_per_image: z.string().refine(
+      (value) => {
+        const parsedValue = parseFloat(value);
+        return !isNaN(parsedValue) && parsedValue > 0;
+      },
+      {
+        message: 'Price must be a valid positive number',
+      }
+    ),
+    total_file: z.string().refine((value) => {
+      const parsedValue = parseFloat(value);
+      return !isNaN(parsedValue) && parsedValue > 0;
+    }),
+    total_price: z.string().refine(
+      (value) => {
+        const parsedValue = parseFloat(value);
+        return !isNaN(parsedValue) && parsedValue > 0;
+      },
+      {
+        message: 'Price must be a valid positive number',
+      }
+    ),
+    job_type: z.string().refine((value) => value !== ''),
+    lock_time: z.string().min(4),
+    priority: z.string().refine((value) => value !== ''),
+  })
+  .refine((data) => data.incoming_date === null || data.batch_delivery === null || data.incoming_date <= data.batch_delivery, {
+    message: 'Delivery date must not be earlier than the incoming date',
+    path: ['batch_delivery'],
+  });
