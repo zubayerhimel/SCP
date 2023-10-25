@@ -43,10 +43,24 @@ const IMAGES = [
 ];
 const ProjectBatch = () => {
   const [batchImages, setBatchImages] = useState(IMAGES);
+  const [selectedItems, setSelectedItems] = useState(0);
 
   const onImageCheck = (value: ImageProps) => {
     const updatedBatchImages = batchImages.map((image) => (image.id === value.id ? { ...image, checked: !image.checked } : image));
     setBatchImages(updatedBatchImages);
+    setSelectedItems(updatedBatchImages.filter((el) => el.checked === true).length);
+  };
+
+  const onSelectAll = () => {
+    const updatedBatchImages = batchImages.map((image) => ({ ...image, checked: true }));
+    setBatchImages(updatedBatchImages);
+    setSelectedItems(updatedBatchImages.filter((el) => el.checked === true).length);
+  };
+
+  const onUnselectAll = () => {
+    const updatedBatchImages = batchImages.map((image) => ({ ...image, checked: false }));
+    setBatchImages(updatedBatchImages);
+    setSelectedItems(updatedBatchImages.filter((el) => el.checked === true).length);
   };
 
   return (
@@ -67,7 +81,22 @@ const ProjectBatch = () => {
       <div className='mt-12 mb-6'>
         <div className='flex items-center gap-2 mb-4'>
           <span className='text-sm font-semibold'>Sub-Batch 2</span>
-          <span className='mt-1 text-xs'>2 items selected</span>
+          {selectedItems !== 0 && (
+            <>
+              <span className='mt-1 text-xs'>{selectedItems} items selected</span>
+              {IMAGES.length !== selectedItems && (
+                <Button className='text-primary hover:text-primary' variant='ghost' onClick={onSelectAll}>
+                  Select all
+                </Button>
+              )}
+            </>
+          )}
+
+          {IMAGES.length === selectedItems && (
+            <Button className='text-primary hover:text-primary' variant='ghost' onClick={onUnselectAll}>
+              Unselect all
+            </Button>
+          )}
         </div>
         <div className='flex flex-wrap items-center justify-start gap-8'>
           <AddImageButton />
