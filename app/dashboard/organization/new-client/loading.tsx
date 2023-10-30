@@ -1,7 +1,7 @@
-import LoadingIndicator from '@/components/ui/loading-indicator';
+import { Spinner } from '@/components/ui/spinner';
 
 const loading = () => {
-  return <LoadingIndicator />;
+  return <Spinner />;
 };
 
 export default loading;

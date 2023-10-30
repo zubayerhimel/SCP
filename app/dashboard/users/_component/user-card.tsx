@@ -24,9 +24,9 @@ const UserCard = ({ title }: { title: string }) => {
       <div className='flex-none'>
         <div className='flex gap-2'>
           <Link href='/dashboard/users/lkdf'>
-            <Pencil className='w-4 h-4 text-purple-600 cursor-pointer' />
+            <Pencil className='w-4 h-4' role='button' />
           </Link>
-          <Trash className='w-4 h-4 text-purple-600 cursor-pointer' />
+          <Trash className='w-4 h-4' role='button' />
         </div>
       </div>
     </Card>

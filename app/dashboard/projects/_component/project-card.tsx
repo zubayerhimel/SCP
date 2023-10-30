@@ -9,8 +9,8 @@ const ProjectCard = () => {
   return (
     <Card className='p-6 ring-1 ring-purple-200'>
       <div className='flex justify-end gap-2 -mt-2'>
-        <PenSquare className='w-4 h-4' />
-        <Trash className='w-4 h-4' />
+        <PenSquare role='button' className='w-4 h-4' />
+        <Trash role='button' className='w-4 h-4' />
       </div>
       <div className='flex'>
         <div className='flex flex-col justify-between mr-6 border-r-2 border-r-gray-300'>

@@ -14,8 +14,8 @@ const RoleCard = () => {
             </Label>
             <div className='flex items-center gap-2'>
               <Switch id='role' />
-              <Pencil className='w-4 h-4 cursor-pointer' />
-              <Trash className='w-4 h-4 cursor-pointer' />
+              <Pencil className='w-4 h-4' role='button' />
+              <Trash className='w-4 h-4' role='button' />
             </div>
           </div>
         </CardTitle>

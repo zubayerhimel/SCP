@@ -1,19 +1,17 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 
-import Demo from '@/assets/images/demo_img1.jpeg';
-import AddImageButton from '@/components/ui/add-image-button';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Checkbox } from '@/components/ui/checkbox';
-import { Label } from '@/components/ui/label';
-import PageWrapper from '@/components/ui/page-wrapper';
 import ProjectDetailsInfo from '@/app/dashboard/projects/_component/project-details-info';
-import { cn } from '@/lib/utils';
+import PageWrapper from '@/components/ui/page-wrapper';
+import CheckImage from '../../../_component/check-image';
+// import UploadButton from '../../../_component/upload-button';
 
-type ImageProps = {
+import Demo from '@/assets/images/demo_img1.jpeg';
+
+export type ImageProps = {
   id: number;
   source: any;
   checked: boolean;
@@ -42,8 +40,10 @@ const IMAGES = [
   },
 ];
 const ProjectBatch = () => {
-  const [batchImages, setBatchImages] = useState(IMAGES);
-  const [selectedItems, setSelectedItems] = useState(0);
+  const [batchImages, setBatchImages] = useState<ImageProps[]>(IMAGES);
+  const [selectedItems, setSelectedItems] = useState<number>(0);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [files, setFiles] = useState<File[]>([]);
 
   const updateSelectedItems = (images: ImageProps[]) => images.filter((el) => el.checked === true).length;
 
@@ -101,19 +101,14 @@ const ProjectBatch = () => {
           )}
         </div>
         <div className='flex flex-wrap items-center justify-start gap-8'>
-          <AddImageButton />
+          {/* <UploadButton isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} /> */}
           {batchImages.map((image) => (
-            <div className='relative rounded-lg bg-primary/10' key={image.id} onClick={() => onImageCheck(image)}>
-              <Checkbox id={`card-${image.id}`} className='absolute w-5 h-5 mt-4 ml-4' checked={image.checked} />
-              <Label
-                id={`card-${image.id}`}
-                className={cn('flex items-center border-4 border-transparent justify-between rounded-lg hover:text-accent-foreground', image.checked && 'border-4 border-primary')}>
-                <Image className='w-[298px] h-[198px] object-contain rounded-lg' alt='product' src={image.source} />
-              </Label>
-            </div>
+            <CheckImage key={image.id} image={image} onImageCheck={onImageCheck} />
           ))}
         </div>
       </div>
+
+      {/* add image modal */}
     </PageWrapper>
   );
 };

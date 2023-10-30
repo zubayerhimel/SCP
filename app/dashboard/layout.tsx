@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 import { AlignLeft, BellRing } from 'lucide-react';
+import { Suspense } from 'react';
 
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import SidebarNav from '@/components/ui/sidebar-nav';
 import { TopBarNav } from '@/components/ui/topbar-nav';
 import { UserNav } from '@/components/ui/user-nav';
-import { Suspense } from 'react';
-import LoadingIndicator from '@/components/ui/loading-indicator';
+import { Spinner } from '@/components/ui/spinner';
+import SidebarNav from '@/components/ui/sidebar-nav';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -62,7 +62,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           <UserNav />
         </div>
       </div>
-      <Suspense fallback={<LoadingIndicator />}>{children}</Suspense>
+      <Suspense fallback={<Spinner />}>{children}</Suspense>
     </>
   );
 }
